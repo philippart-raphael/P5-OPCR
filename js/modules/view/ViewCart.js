@@ -1,9 +1,9 @@
-import LoadLocalStorage from "../storage/LoadLocalStorage.js";
+import LocalStorageLoad from "../storage/LocalStorageLoad.js";
 import Api from "../api/Api.js";
 import Convert from "./Convert.js";
 import ViewTotalCart from "./ViewTotalCart.js";
 
-export default class ViewCart extends LoadLocalStorage {
+export default class ViewCart extends LocalStorageLoad {
   #cartItems = document.querySelector('#cart__items');
   #cartPrice = document.querySelector('.cart__price');
   #cartOrder = document.querySelector('.cart__order');

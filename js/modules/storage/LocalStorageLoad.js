@@ -1,6 +1,6 @@
 import LocalStorage from "./LocalStorage.js";
 
-export default class LoadLocalStorage extends LocalStorage {
+export default class LocalStorageLoad extends LocalStorage {
   constructor() {
     super();
   }
