@@ -1,8 +1,6 @@
 import ValidatorEventAddProduct from "../validator/ValidatorEventAddProduct.js";
 
 export default class LocalStorageProduct extends ValidatorEventAddProduct {
-  #storage = 'products';
-
   constructor(product) {
     super();
     this._product = product;
@@ -10,7 +8,7 @@ export default class LocalStorageProduct extends ValidatorEventAddProduct {
   }
 
   addDataLocalStorage() {
-    if (localStorage.getItem(this.#storage)) {
+    if (this.localStorage) {
       let cartLocalStorage = JSON.parse(this.localStorage);
       let cart;
 
