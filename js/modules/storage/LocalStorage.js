@@ -8,4 +8,8 @@ export default class LocalStorage {
   get localStorage() {
     return localStorage.getItem(this.#storage);
   }
+
+  deleteLocalStorage() {
+    localStorage.removeItem(this.#storage);
+  }
 }

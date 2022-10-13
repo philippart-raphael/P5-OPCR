@@ -27,6 +27,12 @@ export default class ValidatorEventAddProduct extends LocalStorage {
   }
 
   viewError(message, elementDOM) {
-    elementDOM ? new Error(elementDOM, message) : new Error(document.querySelector('.item__content__settings__quantity'), message);
+    let cartDOM = document.querySelector('.item__content__settings__quantity');
+
+    if (elementDOM) {
+      cartDOM = elementDOM;
+    }
+
+    new Error(cartDOM, message);
   }
 }

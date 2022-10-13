@@ -28,9 +28,11 @@ export default class LocalStorageProduct extends ValidatorEventAddProduct {
       } else {
         cartLocalStorage.push(this._product);
         this.localStorage = cartLocalStorage;
+        this.viewError('Produit ajouter a votre panier !');
       }
     } else {
       this.localStorage = [this._product];
+      this.viewError('Produit ajouter a votre panier !');
     }
   }
 }

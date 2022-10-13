@@ -19,7 +19,6 @@ export default class EventUpdateCart extends ValidatorEventAddProduct {
         const newTotal = ev.target.value;
 
         const product = new Product(id, newTotal, color);
-        console.log(this.validTotal(newTotal))
 
         if (!this.validTotal(newTotal)) {
           this.viewError('Total invalid !', document.querySelector('.cart__item__content__settings__quantity'));

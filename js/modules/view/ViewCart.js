@@ -3,6 +3,7 @@ import Api from "../api/Api.js";
 import Convert from "./Convert.js";
 import ViewTotalCart from "./ViewTotalCart.js";
 import EventUpdateCart from "../event/EventUpdateCart.js";
+import EventDeleteCart from "../event/EventDeleteCart.js";
 
 export default class ViewCart extends LocalStorageLoad {
   #cartItems = document.querySelector('#cart__items');
@@ -28,6 +29,7 @@ export default class ViewCart extends LocalStorageLoad {
             .then(productAPI => {
               this.viewCart(productCart, productAPI);
               new EventUpdateCart();
+              new EventDeleteCart();
             })
             .catch(e => console.error(e));
         });
