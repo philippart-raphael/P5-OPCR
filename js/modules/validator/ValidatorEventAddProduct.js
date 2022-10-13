@@ -26,7 +26,7 @@ export default class ValidatorEventAddProduct extends LocalStorage {
     return this.#regExpColor.test(colors);
   }
 
-  viewError(message) {
-    new Error(document.querySelector('.item__content__settings__quantity'), message);
+  viewError(message, elementDOM) {
+    elementDOM ? new Error(elementDOM, message) : new Error(document.querySelector('.item__content__settings__quantity'), message);
   }
 }

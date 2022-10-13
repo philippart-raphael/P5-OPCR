@@ -2,6 +2,7 @@ import LocalStorageLoad from "../storage/LocalStorageLoad.js";
 import Api from "../api/Api.js";
 import Convert from "./Convert.js";
 import ViewTotalCart from "./ViewTotalCart.js";
+import EventUpdateCart from "../event/EventUpdateCart.js";
 
 export default class ViewCart extends LocalStorageLoad {
   #cartItems = document.querySelector('#cart__items');
@@ -19,12 +20,14 @@ export default class ViewCart extends LocalStorageLoad {
       this.#cartTitle.innerHTML = 'Votre panier est vide !';
     }
     else {
+      this.#cartItems.innerHTML = '';
       this.viewTotalCart = new ViewTotalCart();
       const api = new Api();
         this.localStorageLOAD.forEach(productCart => {
           api.getAPIProduct(productCart._id)
             .then(productAPI => {
-              this.viewCart(productCart, productAPI)
+              this.viewCart(productCart, productAPI);
+              new EventUpdateCart();
             })
             .catch(e => console.error(e));
         });
