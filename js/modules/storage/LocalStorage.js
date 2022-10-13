@@ -12,4 +12,8 @@ export default class LocalStorage {
   deleteLocalStorage() {
     localStorage.removeItem(this.#storage);
   }
+
+  clearLocalStorage() {
+    localStorage.removeItem(this.#storage);
+  }
 }

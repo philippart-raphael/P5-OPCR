@@ -4,6 +4,7 @@ import Convert from "./Convert.js";
 import ViewTotalCart from "./ViewTotalCart.js";
 import EventUpdateCart from "../event/EventUpdateCart.js";
 import EventDeleteCart from "../event/EventDeleteCart.js";
+import EventSubmitOrder from "../event/EventSubmitOrder.js";
 
 export default class ViewCart extends LocalStorageLoad {
   #cartItems = document.querySelector('#cart__items');
@@ -24,15 +25,16 @@ export default class ViewCart extends LocalStorageLoad {
       this.#cartItems.innerHTML = '';
       this.viewTotalCart = new ViewTotalCart();
       const api = new Api();
-        this.localStorageLOAD.forEach(productCart => {
-          api.getAPIProduct(productCart._id)
-            .then(productAPI => {
-              this.viewCart(productCart, productAPI);
-              new EventUpdateCart();
-              new EventDeleteCart();
-            })
-            .catch(e => console.error(e));
-        });
+      this.localStorageLOAD.forEach(productCart => {
+        api.getAPIProduct(productCart._id)
+          .then(productAPI => {
+            this.viewCart(productCart, productAPI);
+            new EventUpdateCart();
+            new EventDeleteCart();
+          })
+          .catch(e => console.error(e));
+      });
+      new EventSubmitOrder();
     }
   }
 
