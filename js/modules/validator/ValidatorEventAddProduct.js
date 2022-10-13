@@ -1,6 +1,7 @@
 import Error from "./../error/Error.js";
+import LocalStorage from "../storage/LocalStorage.js";
 
-export default class ValidatorEventAddProduct {
+export default class ValidatorEventAddProduct extends LocalStorage {
   #maximumQuantity = 100;
   #regExpColor = new RegExp(/^\W*$/);
 

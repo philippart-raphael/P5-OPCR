@@ -35,12 +35,4 @@ export default class LocalStorageProduct extends ValidatorEventAddProduct {
       this.localStorage = [this._product];
     }
   }
-
-  set localStorage(data) {
-    localStorage.setItem(this.#storage, JSON.stringify(data));
-  }
-
-  get localStorage() {
-    return localStorage.getItem(this.#storage);
-  }
 }
