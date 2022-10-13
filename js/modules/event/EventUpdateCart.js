@@ -21,11 +21,11 @@ export default class EventUpdateCart extends ValidatorEventAddProduct {
         const product = new Product(id, newTotal, color);
 
         if (!this.validTotal(newTotal)) {
-          this.viewError('Total invalid !', document.querySelector('.cart__item__content__settings__quantity'));
+          this.viewError('Total invalid !', ev.target.parentNode);
         } else {
           new LocalStorageProductUpdate(product);
+          new ViewCart();
         }
-        new ViewCart();
       }, false);
     });
   }
