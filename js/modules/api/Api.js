@@ -1,5 +1,5 @@
 export default class Api {
-    urlApi = 'http://192.168.1.11:3001/api/products';
+    urlApi = 'http://192.168.1.11:3000/api/products';
 
     getAPIProduct(id = null) {
         return fetch(id ? `${this.urlApi}/${id}` : this.urlApi)
