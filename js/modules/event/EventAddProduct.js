@@ -7,6 +7,10 @@ export default class EventAddProduct extends ValidatorEventAddProduct {
   formColors = document.querySelector('#colors');
   formButton = document.querySelector('#addToCart');
 
+  /**
+   * Event Add Product in Cart
+   * @param id
+   */
   constructor(id) {
     super();
     this._id = id;

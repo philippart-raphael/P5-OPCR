@@ -7,6 +7,9 @@ import Api from "../api/Api.js";
 export default class EventSubmitOrder {
   cartOrder = document.querySelector('#order');
 
+  /**
+   * Event Submit Order
+   */
   constructor() {
     this.cartOrder.addEventListener('click', async e => {
       e.preventDefault();
@@ -22,6 +25,9 @@ export default class EventSubmitOrder {
       const cityErrorDOM = document.querySelector('#cityErrorMsg');
       const emailErrorDOM = document.querySelector('#emailErrorMsg');
 
+      /**
+       * @type {{firstName, lastName, address, city, email}}
+       */
       const dataForm = {
         firstName: firstName.value,
         lastName: lastname.value,
@@ -29,7 +35,9 @@ export default class EventSubmitOrder {
         city: city.value,
         email: email.value,
       }
-
+      /**
+       * @type {ValidatorDataPOST}
+       */
       const errors = new ValidatorDataPOST(dataForm);
 
       if (errors) {

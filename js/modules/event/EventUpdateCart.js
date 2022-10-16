@@ -4,12 +4,18 @@ import LocalStorageProductUpdate from "../storage/LocalStorageProductUpdate.js";
 import ViewCart from "../view/ViewCart.js";
 
 export default class EventUpdateCart extends ValidatorEventAddProduct {
+  /**
+   * get Values product
+   */
   constructor() {
     super();
     this.selectorDOM = document.querySelectorAll('.itemQuantity');
     this.init();
   }
 
+  /**
+   * initialize event
+   */
   init() {
     this.selectorDOM.forEach(element => {
       element.addEventListener('change', ev => {

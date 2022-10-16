@@ -2,6 +2,11 @@ export default class Error {
   color = '#FFF';
   time = 5000;
 
+  /**
+   * Displays an error in the dom
+   * @param elementDOM
+   * @param error
+   */
   constructor(elementDOM, error) {
     this.elementDOM = elementDOM;
     this.error = error;

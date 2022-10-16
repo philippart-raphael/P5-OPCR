@@ -1,18 +1,26 @@
 import ValidatorEventAddProduct from "../validator/ValidatorEventAddProduct.js";
 
 export default class LocalStorageProduct extends ValidatorEventAddProduct {
+  /**
+   * Add Product in localStorage
+   * @param product
+   */
   constructor(product) {
     super();
     this._product = product;
     this.addDataLocalStorage();
   }
 
+  /**
+   * add data in local storage
+   */
   addDataLocalStorage() {
     if (this.localStorage) {
       let cartLocalStorage = JSON.parse(this.localStorage);
       let cart;
 
       if (cartLocalStorage.find(p => p._id === this._product._id && p.color === this._product.color)) {
+        // Product find in Cart
         cart = cartLocalStorage.map(product => {
           if (product._id === this._product._id && product.color === this._product.color) {
             if (this.validTotal(this._product.total + parseInt(product.total))) {

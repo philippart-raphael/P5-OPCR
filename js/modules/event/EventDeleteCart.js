@@ -2,6 +2,9 @@ import LocalStorageProductDelete from "../storage/LocalStorageProductDelete.js";
 import Product from "../entity/Product.js";
 
 export default class EventDeleteCart {
+  /**
+   * Event Delete Product in Cart
+   */
   constructor() {
     this.selectorDOM = document.querySelectorAll('.deleteItem');
 
