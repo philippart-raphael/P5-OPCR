@@ -18,7 +18,6 @@ export default class LocalStorageProductUpdate extends ValidatorEventAddProduct 
             if (this.validTotal(this._product.total)) {
               product.total = this._product.total;
             } else {
-              console.log('OK')
               this.viewError('Total invalide !', document.querySelector('.cart__item__content__settings__quantity'));
             }
           }

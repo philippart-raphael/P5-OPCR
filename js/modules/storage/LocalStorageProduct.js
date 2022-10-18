@@ -27,7 +27,7 @@ export default class LocalStorageProduct extends ValidatorEventAddProduct {
               product.total = this._product.total + parseInt(product.total);
               this.viewError('Produit ajouter a votre panier !');
             } else {
-              this.viewError('Total invalide !');
+              this.viewError(`Total invalide, vous avez déjà ${product.total} produit identique dans votre panier !`);
             }
           }
           return product;
